@@ -48,7 +48,7 @@ jobs:
         id: gpg
         run: |
           echo "${GPG_PRIVATE_KEY}" | gpg --import
-          fingerprint=$(echo "${GPG_PRIVATE_KEY}" | gpg --show-keys --with-colons | awk -F=":" '$1=="fpr" {print $10}')
+          fingerprint=$(echo "${GPG_PRIVATE_KEY}" | gpg --show-keys --with-colons | awk -F ":" '$1=="fpr" {print $10}')
           echo "fingerprint=$fingerprint" >> $GITHUB_OUTPUT
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
