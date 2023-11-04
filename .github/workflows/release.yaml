@@ -34,13 +34,8 @@ jobs:
           go-version-file: "go.mod"
         if: ${{ steps.release.outputs.release_created }}
 
-      - name: Test
-        run: echo $GPG_PRIVATE_KEY | sha1sum
-        env:
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-
       - name: Import GPG key for signing
-        run: echo $GPG_PRIVATE_KEY | gpg --import
+        run: echo -n $GPG_PRIVATE_KEY | base64 --decode | gpg --import
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 
