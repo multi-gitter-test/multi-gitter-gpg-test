@@ -45,7 +45,10 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 
       - name: Import GPG key for signing
-        run: print "${GPG_PRIVATE_KEY}" | base64 --decode | gpg --import
+        run:
+          mkdir ~/.gnupg
+          print "${GPG_PRIVATE_KEY}" > ~/.gnupg/private.key
+          gpg --import ~/.gnupg/private.key
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 
