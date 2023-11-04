@@ -34,6 +34,16 @@ jobs:
           go-version-file: "go.mod"
         if: ${{ steps.release.outputs.release_created }}
 
+      - name: Testing 1
+        run: echo $GPG_PRIVATE_KEY | wc -c
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+
+      - name: Testing 2
+        run: echo ${GPG_PRIVATE_KEY:0:15}
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+
       - name: Import GPG key for signing
         run: echo -n $GPG_PRIVATE_KEY | base64 --decode | gpg --import
         env:
