@@ -22,10 +22,10 @@ Are you a bash-guru or simply prefer your scripting in Node.js? It doesn't matte
 * Updating a dependency
 * Automatically fixing linting issues
 * Search and replace
-* Anything else you are able to script!asdasdasd
+* Anything else you are able to script!
 
 ## Demo
-asdasd
+
 ![Gif](docs/img/demo.gif)
 
 ## Example
