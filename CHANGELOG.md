@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/multi-gitter-test/multi-gitter-gpg-test/compare/v1.0.4...v1.0.5) (2023-11-04)
+
+
+### Miscellaneous
+
+* testinginiadsfnasdj ([e8dd444](https://github.com/multi-gitter-test/multi-gitter-gpg-test/commit/e8dd4448c5d82f8bf664cfa7cbc30b8208a9ca0f))
+
 ## [1.0.4](https://github.com/multi-gitter-test/multi-gitter-gpg-test/compare/v1.0.3...v1.0.4) (2023-11-04)
 
 
