@@ -45,7 +45,11 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 
       - name: Import GPG key for signing
-        run: echo "${GPG_PRIVATE_KEY}" | gpg --import
+        id: gpg
+        run: |
+          echo "${GPG_PRIVATE_KEY}" | gpg --import
+          fingerprint=$(echo "${GPG_PRIVATE_KEY}" | gpg --show-keys --with-colons | awk -F=":" '$1=="fpr" {print $10}')
+          echo "fingerprint=$fingerprint" >> $GITHUB_OUTPUT
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 
@@ -55,7 +59,7 @@ jobs:
           version: latest
           args: release --clean --skip-publish
         env:
-          GPG_FINGERPRINT: ${{ secrets.GPG_FINGERPRINT }}
+          GPG_FINGERPRINT: ${{ steps.gpg.outputs.fingerprint }}
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Comment on prs and issues
