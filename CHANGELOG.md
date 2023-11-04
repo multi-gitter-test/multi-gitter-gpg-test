@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/multi-gitter-test/multi-gitter-gpg-test/compare/v1.0.1...v1.0.2) (2023-11-04)
+
+
+### Miscellaneous
+
+* test gpg 3 ([40808ce](https://github.com/multi-gitter-test/multi-gitter-gpg-test/commit/40808ce5a2c9d48bdcddda0ce345b3aa11e41990))
+
 ## [1.0.1](https://github.com/multi-gitter-test/multi-gitter-gpg-test/compare/v1.0.0...v1.0.1) (2023-11-04)
 
 
